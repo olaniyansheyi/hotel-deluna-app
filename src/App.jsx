@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const H1 = styled.h1`
   font-size: 30px;
@@ -12,8 +13,10 @@ const Button = styled.button`
   border: none;
   border-radius: 7px;
   background-color: purple;
-  color: white;
+  color: var(--brand-sm);
+
   margin: 20px;
+
   cursor: pointer;
 `;
 const Input = styled.input`
@@ -29,15 +32,18 @@ const StyledApp = styled.div`
 
 function App() {
   return (
-    <StyledApp>
-      <H1>Hello World</H1>
-      <Button>Check in</Button>
-      <Input
-        type="Number"
-        placeholder="
+    <>
+      <GlobalStyles />
+      <StyledApp>
+        <H1>Hello World</H1>
+        <Button>Check in</Button>
+        <Input
+          type="Number"
+          placeholder="
       number of guests"
-      ></Input>
-    </StyledApp>
+        ></Input>
+      </StyledApp>
+    </>
   );
 }
 
