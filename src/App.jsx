@@ -16,13 +16,28 @@ const Button = styled.button`
   margin: 20px;
   cursor: pointer;
 `;
+const Input = styled.input`
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+`;
+
+const StyledApp = styled.div`
+  background-color: orange;
+  padding: 20px;
+`;
 
 function App() {
   return (
-    <div>
+    <StyledApp>
       <H1>Hello World</H1>
       <Button>Check in</Button>
-    </div>
+      <Input
+        type="Number"
+        placeholder="
+      number of guests"
+      ></Input>
+    </StyledApp>
   );
 }
 
