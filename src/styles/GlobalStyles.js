@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 /*
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -174,3 +174,5 @@ FOR DARK MODE
 --color-grey-900: #f9fafb;
 */
 `;
+
+export default GlobalStyle;
