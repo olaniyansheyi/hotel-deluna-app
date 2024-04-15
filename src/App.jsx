@@ -14,16 +14,20 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Row type="vertical">
+        <Row>
           <Row type="horizontal">
             <Heading as="h1">Hello World</Heading>
 
             <div>
               <Heading as="h2">Check in and out</Heading>
               <Button>Check in</Button>
+
+              <Button variation="secondary" size="small">
+                Check out
+              </Button>
             </div>
           </Row>
-          <Row type="vertical">
+          <Row>
             <Heading to="h3">Form</Heading>
             <Input
               type="Number"
