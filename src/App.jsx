@@ -3,9 +3,9 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Button from "./ui/Button";
 import Input from "./ui/Input";
 import Heading from "./ui/Heading";
+import Row from "./ui/Row";
 
 const StyledApp = styled.div`
-  background-color: orange;
   padding: 20px;
 `;
 
@@ -14,15 +14,29 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Heading as="h1">Hello World</Heading>
+        <Row type="vertical">
+          <Row type="horizontal">
+            <Heading as="h1">Hello World</Heading>
 
-        <Heading as="h2">Check in and out</Heading>
-        <Button>Check in</Button>
-        <Input
-          type="Number"
-          placeholder="
+            <div>
+              <Heading as="h2">Check in and out</Heading>
+              <Button>Check in</Button>
+            </div>
+          </Row>
+          <Row type="vertical">
+            <Heading to="h3">Form</Heading>
+            <Input
+              type="Number"
+              placeholder="
       number of guests"
-        ></Input>
+            ></Input>
+            <Input
+              type="Number"
+              placeholder="
+      number of guests"
+            ></Input>
+          </Row>
+        </Row>
       </StyledApp>
     </>
   );
