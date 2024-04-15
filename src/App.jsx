@@ -14,9 +14,9 @@ function App() {
     <>
       <GlobalStyles />
       <StyledApp>
-        <Heading type="h1">Hello World</Heading>
+        <Heading as="h1">Hello World</Heading>
 
-        <Heading type="h2">Check in and out</Heading>
+        <Heading as="h2">Check in and out</Heading>
         <Button>Check in</Button>
         <Input
           type="Number"
