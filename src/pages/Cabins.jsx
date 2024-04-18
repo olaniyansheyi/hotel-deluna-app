@@ -5,9 +5,9 @@ import { getCarbins } from "../services/apiCabins";
 import CabinTable from "../features/cabins/CabinTable";
 
 function Cabins() {
-  useEffect(function () {
-    getCarbins().then((data) => console.log(data));
-  }, []);
+  // useEffect(function () {
+  //   getCarbins().then((data) => console.log(data));
+  // }, []);
 
   return (
     <>
