@@ -85,6 +85,7 @@ function CreateCabinForm() {
             required: "This field is required",
           })}
         />
+        {errors?.name?.message && <Error>{errors.mame.message}</Error>}
       </FormRow>
 
       <FormRow>
