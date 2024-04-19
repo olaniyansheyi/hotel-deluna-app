@@ -12,14 +12,8 @@ import { toast } from "react-hot-toast";
 import { formatDistanceStrict } from "date-fns";
 import FormRow from "../../ui/FormRow";
 
-function CreateCabinForm({ cabinToEdit = {} }) {
-  const { id: editId, ...editValues } = cabinToEdit;
-
-  const isEditSession = Boolean(editId);
-
-  const { register, handleSubmit, reset, getValues, formState } = useForm({
-    defaultValues: isEditSession ? editValues : {},
-  });
+function CreateCabinForm() {
+  const { register, handleSubmit, reset, getValues, formState } = useForm();
 
   const { errors } = formState;
 
@@ -119,7 +113,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           type="file"
           accept="image/*"
           {...register("image", {
-            required: isEditSession ? false : "This field is required",
+            required: "This field is required",
           })}
         />
       </FormRow>
@@ -129,7 +123,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
-        <Button>{isEditSession ? "Edit cabin" : "Create new cabin"}</Button>
+        <Button>Edit cabin</Button>
       </FormRow>
     </Form>
   );

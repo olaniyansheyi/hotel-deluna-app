@@ -44,7 +44,9 @@ export async function createCabin(newCabin) {
     await supabase.from("cabins").delete().eq("id", data.id);
 
     console.error(storageError);
-    throw new Error("cabins could not be deleted");
+    throw new Error(
+      " cabins image could not be uploaded  and the cabin was not created"
+    );
   }
 
   return data;
@@ -55,9 +57,7 @@ export async function deleteCabin(id) {
 
   if (error) {
     console.error(error);
-    throw new Error(
-      "cabins image could not be uploaded  and the cabin was not created"
-    );
+    throw new Error("abins could not be deleted");
   }
   return data;
 }
