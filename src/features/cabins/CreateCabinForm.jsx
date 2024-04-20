@@ -11,6 +11,7 @@ import { createEditCabin } from "../../services/apiCabins";
 import { toast } from "react-hot-toast";
 import { formatDistanceStrict } from "date-fns";
 import FormRow from "../../ui/FormRow";
+import { useCreateCabin } from "./useCreateCabin";
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editId, ...editValues } = cabinToEdit;
@@ -25,18 +26,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
   const queryClient = useQueryClient();
 
-  const { mutate: createCabin, isLoading: isCreating } = useMutation({
-    mutationFn: createEditCabin,
-    onSuccess: () => {
-      toast.success("cabin created successfully");
-      queryClient.invalidateQueries({
-        queryKey: ["cabins"],
-      });
-      reset();
-    },
-
-    onError: (error) => toast.error(error.message),
-  });
+  const { isCreating, createCabin } = useCreateCabin();
 
   const { mutate: editCabin, isLoading: isEditing } = useMutation({
     mutationFn: ({ newCabinData, id }) => createEditCabin(newCabinData, id),
