@@ -9,15 +9,6 @@ import { useEditSettings } from "./useEditSettings";
 //NOTE: I DIDI THE MISTAKE OF LENGHT INSTED OF LENGTH....LET IT STAY LIKE THAT IN THIS COMPONENT
 
 function UpdateSettingsForm() {
-  // const {
-  //   isLoading,
-  //   settings: {
-  //     minBookingLenght,
-  //     maxBookingLenght,
-  //     maxGuestsPerBooking,
-  //     BreakfastPrice,
-  //   } = {},
-  // } = useSettings();
   const {
     isLoading,
     settings: {
