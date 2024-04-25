@@ -24,7 +24,7 @@ function CabinTable() {
   if (isLoading) return <Spinner />;
 
   return (
-    <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
+    <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 2fr">
       <Table.Header>
         <div></div>
         <div>cabin</div>
