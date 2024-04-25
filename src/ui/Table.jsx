@@ -58,3 +58,23 @@ const Empty = styled.p`
   text-align: center;
   margin: 2.4rem;
 `;
+
+const TableContext = createContext();
+
+function Table(columns, children) {
+  return (
+    <TableContext.provider>
+      <StyledTable>{children}</StyledTable>
+    </TableContext.provider>
+  );
+}
+function Header({ children }) {}
+function Row({ children }) {}
+function Body({ children }) {}
+function Footer({ children }) {}
+Table.Header = Header;
+Table.Row = Row;
+Table.Body = Body;
+Table.Footer = Footer;
+
+export default Table;
