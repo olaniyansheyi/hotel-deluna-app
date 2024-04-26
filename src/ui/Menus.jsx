@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { createContext, useState, useContext } from "react";
-r;
 import { HiEllipsisVertical } from "react-icons/hi2";
+import { createPortal } from "react-dom";
 
 const Menu = styled.div`
   display: flex;
@@ -82,7 +82,9 @@ function Menus({ children }) {
 function Toggle({ id }) {
   const { openId, close, open } = useContext(MenusContext);
 
-  function handleClick() {}
+  function handleClick() {
+    openId === "" || openId !== id ? open(id) : close();
+  }
 
   return (
     <StyledToggle onClick={() => handleClick}>
@@ -90,11 +92,21 @@ function Toggle({ id }) {
     </StyledToggle>
   );
 }
-function List({ id }) {}
+function List({ id, children }) {
+  const { openId } = useContext(MenusContext);
+
+  if (openId !== id) return null;
+
+  return createPortal(
+    <StyledList position={{ x: 20, y: 20 }}>{children}</StyledList>,
+    document.body
+  );
+}
+
 function Button() {
   return (
     <li>
-      <StyledButton>{children}</StyledButton>
+      <StyledButton></StyledButton>
     </li>
   );
 }
