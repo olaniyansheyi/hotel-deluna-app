@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { createContext, useState, useContext } from "react";
+r;
+import { HiEllipsisVertical } from "react-icons/hi2";
 
-const StyledMenu = styled.div`
+const Menu = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -61,8 +64,44 @@ const StyledButton = styled.button`
   }
 `;
 
+const MenusContext = createContext();
+
 function Menus({ children }) {
-  return <div>{children}</div>;
+  const [openId, setOpenId] = useState("");
+
+  const close = () => setOpenId("");
+  const open = setOpenId;
+
+  return (
+    <MenusContext.Provider value={{ openId, close, open }}>
+      {children}
+    </MenusContext.Provider>
+  );
 }
+
+function Toggle({ id }) {
+  const { openId, close, open } = useContext(MenusContext);
+
+  function handleClick() {}
+
+  return (
+    <StyledToggle onClick={() => handleClick}>
+      <HiEllipsisVertical />
+    </StyledToggle>
+  );
+}
+function List({ id }) {}
+function Button() {
+  return (
+    <li>
+      <StyledButton>{children}</StyledButton>
+    </li>
+  );
+}
+
+Menus.Menu = Menu;
+Menus.Toggle = Toggle;
+Menus.List = List;
+Menus.Button = Button;
 
 export default Menus;
