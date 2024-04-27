@@ -7,7 +7,6 @@ import { useCreateCabin } from "./useCreateCabin";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
-import Menus from "../../ui/Menus";
 
 // const TableRow = styled.div`
 //   display: grid;
