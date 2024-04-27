@@ -7,10 +7,6 @@ import CreateCabinForm from "../features/cabins/CreateCabinForm";
 import AddCabin from "../features/cabins/AddCabin";
 
 function Cabins() {
-  // useEffect(function () {
-  //   getCarbins().then((data) => console.log(data));
-  // }, []);
-
   return (
     <>
       <Row type="horizontal">
