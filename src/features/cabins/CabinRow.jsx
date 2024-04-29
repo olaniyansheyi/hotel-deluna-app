@@ -15,7 +15,6 @@ import Menus from "../../ui/Menus";
 //   column-gap: 2.4rem;
 //   align-items: center;
 //   padding: 1.4rem 2.4rem;
-
 //   &:not(:last-child) {
 //     border-bottom: 1px solid var(--color-grey-100);
 //   }
