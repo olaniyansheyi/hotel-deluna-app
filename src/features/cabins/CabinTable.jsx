@@ -35,9 +35,10 @@ function CabinTable() {
 
   if (FilteredValue === "no-discount")
     filteredCabins = cabins.filter((cabin) => cabin.discount === 0);
-
   if (FilteredValue === "with-discount")
-    filteredCabins = cabins.filter((cabin) => cabin > 0);
+    filteredCabins = cabins.filter((cabin) => cabin.discount > 0);
+
+  console.log(filteredCabins);
 
   return (
     <Menus>
@@ -52,7 +53,8 @@ function CabinTable() {
         </Table.Header>
 
         <Table.Body
-          data={cabins}
+          // data={cabins}
+          data={filteredCabins}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />
       </Table>
